@@ -1,0 +1,63 @@
+.card-movie {
+    padding: 0;
+    padding-left: 2em;
+}
+.upcoming-movies {
+    background-color: white;
+  }
+
+  .upcoming-movies section {
+    display: flex;
+    padding: 0 70px 0 70px;
+    justify-content: space-between;
+    margin-top: 1.5em;
+  }
+  .upcoming-movies section p {
+    color:#5F2EEA;
+    font-weight: 400;
+  }
+
+  .upcoming-movies section p:first-child {
+    font-size: 1.2em;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .upcoming-movies section p:last-child {
+    font-size: .9em;
+  }
+  .upcoming-movies section p:first-child:hover {
+    padding-bottom: 3px;
+    border-bottom: 3px solid #5F2EEA;
+  }
+  .upcoming-movies section p a {
+    text-decoration: none;
+  }
+  /* card date section */
+  .card-date ul {
+    display: flex;
+    flex-direction: row;
+    margin: 2em;
+    margin-top: .7em;
+    padding: 2em;
+    padding-bottom: 0;
+    list-style: none;
+  }
+  .card-date ul li button {
+    background-color: white;
+    color: #5F2EEA;
+    border: 1px solid #5F2EEA;
+  }
+  .card-date ul li button:hover {
+    background-color: #5F2EEA;
+    color: white;
+    border: 1px solid white;
+    transition: .3s;
+  }
+  
+  .new-item {
+    border: 1px solid grey;
+    padding: 1em;
+    margin-left: -35px;
+    border-radius: 10px;
+  }

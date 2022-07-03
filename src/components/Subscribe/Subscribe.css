@@ -1,0 +1,48 @@
+.subscribe {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10em 0 10em;
+    padding: 2em;
+    text-align: center;
+    box-shadow: 1px 1px 10px  grey;
+  }
+  .subscribe h2 {
+    color: #4E4B66;
+    margin-bottom: .3em;
+  }
+  .subscribe h1 {
+    color: #5F2EEA;
+    margin-bottom: 1em;
+  }
+  .subscribe .input-subscribe input {
+    margin-left: 5em;
+    width: 30%;
+    height: 3em;
+    margin-bottom: 1em;
+  }
+  .subscribe p {
+    margin-top: 3em;
+    margin-bottom: 1em;
+    color: #6E7191;
+    font-size: 1em;
+  }
+
+@media (max-width: 1000px) {
+  .subscribe .input-subscribe input {
+    margin-left: 0;
+    width: 40%;
+  }
+}
+
+@media (max-width: 920px) {
+  .subscribe {
+    margin: 0 3em 0 3em;
+  }
+  .subscribe .input-subscribe input {
+    margin-left: 0;
+    width: 100%;
+  }
+  .subscribe .input-subscribe button {
+    width: 100%;
+  }
+}
