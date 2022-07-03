@@ -3,6 +3,9 @@ import axios from 'axios'
 import moment from 'moment'
 import React,{ useState, useEffect } from 'react'
 import './Dashboard.css'
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/js/bootstrap.min.js';
+
 
 
 
@@ -115,7 +118,7 @@ const Dashboard = ()=> {
     console.log(formEdit, 'edit')
     return(
         <>
-        <div className="form-filter">
+        <div className="form-filter main">
             <input placeholder='Search Movies' onChange={(e) => {
                     console.log(e, 'cekcekcek')
                     setQuery(prevData => ({
@@ -126,7 +129,7 @@ const Dashboard = ()=> {
                 <select className="form-select" aria-label="Default select example" onSelect={(e) => {
                     setQuery(prevData => ({
                         ...prevData,
-                        sorBy: e.target.value
+                        sortBy: e.target.value
                     }))
                 }}>
                     <option defaultValue>Title</option>
@@ -165,7 +168,7 @@ const Dashboard = ()=> {
                             <form onSubmit= {(e) => handleAddMovies(e)}>
                                 <div className="modal-body">
                                     <div className="mb-3">
-                                        <label htmlFor="cover" className="form-label">Title</label>
+                                        <label htmlFor="cover" className="form-label">Cover</label>
                                         <input type="text" className="form-control" id="cover" onChange={(e) => {setFormAdd(prevState => ({...prevState, cover: e.target.value }))
                                     }} />
                                     </div>
