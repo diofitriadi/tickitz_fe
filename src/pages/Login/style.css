@@ -1,0 +1,174 @@
+
+.container-login {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+}
+.container-login .left-login {
+    position: relative;
+    width: 60%;
+}
+.container-login .left-login img {
+    width: 60vw;
+    height: 100vh;
+}
+.container-login .left-login .brand-logo {
+    display: flex;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+}
+
+.container-login .left-login .brand-logo img{
+    margin-left: 0;
+    margin-right: 7.5em;
+    margin-top: 8em;
+    width: 30vw;
+    height: 30vh;
+}  
+.container-login .left-login .brand-logo span{
+    position: absolute;
+    font-family: 'Inter';
+    font-size: 2em;
+    color: white;
+    margin-left: 1.5em;
+    margin-top: 9em;
+    
+}
+.container-login .right-login {
+    position: relative;
+    width: 40%;
+    padding: 1.5em;
+    margin-top: 0;
+}
+.container-login .right-login h3 {
+    margin-left: 2.5em;
+    margin-bottom: 1em;
+    margin-top: 4em;
+}
+.container-login .right-login .sign-up p {
+    align-items: center;
+}
+.container-login .right-login p{
+    margin-left: 3em;
+}
+.container-login .right-login p:nth-child(2) {
+    font-family: 'Inter';    
+    color: #AAAAAA;
+}
+.container-login .right-login p:last-child{
+    text-align: center;
+}
+.container-login .right-login .input-container {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 3em;
+    margin-right: 3em;
+    margin-top: .3em;
+}
+.container-login .right-login .input-container label {
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+.container-login .right-login .sign-up form .text-center {
+    margin-left: 7em;
+}
+.text-center {
+    text-align: center;
+}
+
+input:active,
+input:focus,
+input:visited,
+input:hover {
+    outline: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"] {
+    display: block;
+    width: 100%;
+    padding: 1rem 1.6rem;
+    background: #fff;
+    border: 1px solid rgb(212, 212, 212);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    color: #A0A3BD;
+    border-radius: 0.8rem;
+}
+
+input[type="submit"] {
+    display: block;
+    width: 78%;
+    margin: 1.5rem 0;
+    margin-left: 4em;
+    padding: 1.2rem;
+    background: #5F2EEA;
+    border: 1px solid rgb(212, 212, 212);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    text-transform: camelcase;
+    color: rgb(247, 247, 247);
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 1rem;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
+    
+}
+
+input[type="submit"]:active,
+input[type="submit"]:focus,
+input[type="submit"]:visited,
+input[type="submit"]:hover {
+    background: rgb(95,46,234);
+}
+
+button,input[type="submit"] {
+    cursor: pointer;
+}
+/* Media Query */
+@media (max-width: 1200px) {
+    .container-login .left-login .brand-logo span{
+        width: 20vw;
+        height: 15vh;
+        font-size: 1.5em;
+    }
+    .container-login .right-login {
+        text-align: center;
+        width: 100vw;
+        
+    }
+    .container-login .right-login form{
+        display: flex;
+        flex-direction: column;
+    }
+    .container-login .right-login p:last-child {
+        margin-left: 1em;
+    }
+    
+    .container-login .right-login .sign-up p {
+        text-align: left;
+        margin-left: 3em;
+    }
+    
+@media (max-width: 920px) {
+    .container-login .left-login {
+        display: none;
+    }
+    input[type="submit"] {
+        margin-left: 4.5em;
+        width: 85%;
+    }
+}
+}

@@ -1,9 +1,11 @@
 import Home from './Home'
-import Dashboard from './Dashboard'
+import Registration from './Registration'
+import Login from './Login'
 
 
 
 export {
     Home,
-    Dashboard
+    Registration,
+    Login
 }

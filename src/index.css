@@ -30,3 +30,11 @@ code {
   overflow:visible;
 }
 
+.btn-primary {
+  background-color: #5F2EEA;
+  
+}
+.btn-primary:hover {
+  background-color: #7040f4;
+}
+
