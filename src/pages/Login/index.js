@@ -117,7 +117,7 @@ export default Login;
 //         const result = await axios({
 //             method: "POST",
 //             data: formAddData,
-//             url: "http://localhost:3000/api/v1/auth/login"
+//             url: "https://tickitz-backend-dio.herokuapp.com/api/v1/auth/login"
 //         })
 //         localStorage.setItem('token', result.data.token)
 //         localStorage.setItem("userLogin", JSON.stringify(result.data)) //v2 recomended

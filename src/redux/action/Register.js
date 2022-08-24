@@ -25,7 +25,7 @@ export const AuthRegister = (registerData) => {
         dispatch(RegisterRequest())
         axios({
             method: "POST",
-            url: "http://localhost:3000/api/v1/auth/register",
+            url: "https://tickitz-backend-dio.herokuapp.com/api/v1/auth/register",
             data: {
                 name : registerData.name , 
                 email: registerData.email, 

@@ -24,7 +24,7 @@ const NowShowing = ()=> {
                         return (
                             <li>
                                 <div className="image-card items" key={index}>
-                                    <img src={`http://localhost:3000/uploads/${movies.cover}`}  alt={movies.title}/>
+                                    <img src={`https://tickitz-backend-dio.herokuapp.com/uploads/${movies.cover}`}  alt={movies.title}/>
                                     <button>Details</button>
                                 </div>
                             </li>
@@ -49,7 +49,7 @@ export default NowShowing;
     //     }))
     //     axios({
     //         method: 'GET',
-    //         url: 'http://localhost:3000/api/v1/movies/',
+    //         url: 'https://tickitz-backend-dio.herokuapp.com/api/v1/movies/',
     //     }).then((res)=> {
     //         setMovies ({
     //             loading: false,
