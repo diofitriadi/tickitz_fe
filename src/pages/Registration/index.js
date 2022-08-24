@@ -89,7 +89,7 @@ const Register = () => {
                     }}/>
                 </div>
                 <input type="submit" name="signin" value="Register" onSubmit={(e)=> handleRegister(e)}/>
-				<p className="text-center">Already have account ? <a href="/login">Sign In</a></p>
+				<p className="text-center">Already have account ? <a href="/Login">Sign In</a></p>
             </form>
             </div>
         </div>

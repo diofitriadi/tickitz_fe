@@ -22,7 +22,7 @@ const Login = () => {
       alert("Login Success");
       navigate("/", { replace: true });
     } else {
-      navigate("/login", { replace: true });
+      navigate("/Login", { replace: true });
     }
   };
 
