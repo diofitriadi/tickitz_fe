@@ -25,7 +25,7 @@ export const GetMovies = () => {
         dispatch(GetMoviesRequest())
         axios({
             method: "GET",
-            url: "http://localhost:3000/api/v1/movies/",
+            url: "http://localhost:3000/api/v1/movies/?page=1&limit=5",
         }).then((res)=> { //ketika sukses, dispatch success
             dispatch(GetMoviesSuccess(res.data)) //trigger / dispatch
         }).catch((err)=> {

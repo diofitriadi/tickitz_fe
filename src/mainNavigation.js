@@ -2,7 +2,7 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import {Home, Registration, Login} from './pages';
 import { VerifyUser } from './pages/Login/verifyUser';
-
+import React from 'react'
 
 
 const MainNavigation = () => {
