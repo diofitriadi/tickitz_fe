@@ -1,6 +1,6 @@
 import logo from './img/brandlogo.svg'
 import {useSelector, useDispatch} from 'react-redux'
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { AuthLogout } from '../../redux/action/Auth';
 import React from 'react';
 import './Navbar.css';
@@ -10,7 +10,6 @@ import './Navbar.css';
 const Navbar = ()=> {
     const dispatch = useDispatch()
     const {isLogin} = useSelector((state)=> state.auth)
-    const navigate = useNavigate()
     // useEffect(()=> {
     //     if(!isLogin) {
     //         navigate('/login', {replace: true})
