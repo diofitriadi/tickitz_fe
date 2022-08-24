@@ -1,8 +1,4 @@
-import React, { useEffect } from "react";
-import { GetMovies } from '../../redux/action/Movies';
-import { useDispatch, useSelector } from "react-redux/es/exports";
-import { AuthLogout } from '../../redux/action/Auth';
-import { useNavigate } from "react-router-dom"
+import React from "react";
 import Navbar from '../../components/Navbar/Navbar'
 import NowShowing from '../../components/NowShowing/NowShowing'
 import MainSection from '../../components/MainSection/MainSection'

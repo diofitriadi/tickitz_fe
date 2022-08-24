@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { AuthRegister } from '../../redux/action/Register'
@@ -9,7 +9,7 @@ import logoTickitz from './img/brandlogowhite.png'
 
 
 const Register = () => {
-    const {loading, data, error, isRegister} = useSelector(state => state.register)
+    const {isRegister} = useSelector(state => state.register)
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const [formAddRegister, setFormAddRegister] = useState({

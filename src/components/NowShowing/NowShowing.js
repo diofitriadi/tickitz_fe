@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 import { GetMovies } from '../../redux/action/Movies';
 import {useSelector, useDispatch} from 'react-redux'
 import {Link} from 'react-router-dom'

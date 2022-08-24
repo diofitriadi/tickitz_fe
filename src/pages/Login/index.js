@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AuthLogin } from "../../redux/action/Auth";
@@ -7,7 +7,7 @@ import brandLogo from "../Registration/img/brandlogowhite.png";
 import spiderman from "../Registration/img/signup_spiderman.png";
 
 const Login = () => {
-  const { loading, data, error, isLogin } = useSelector((state) => state.auth);
+  const { isLogin } = useSelector((state) => state.auth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [formAddData, setFormAddData] = useState({
