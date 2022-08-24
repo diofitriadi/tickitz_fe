@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, Link} from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { AuthRegister } from '../../redux/action/Register'
 import './style.css'
@@ -89,7 +89,7 @@ const Register = () => {
                     }}/>
                 </div>
                 <input type="submit" name="signin" value="Register" onSubmit={(e)=> handleRegister(e)}/>
-				<p className="text-center">Already have account ? <a href="/Login">Sign In</a></p>
+				<p className="text-center">Already have account ? <Link to="/Login">Sign In</Link></p>
             </form>
             </div>
         </div>
