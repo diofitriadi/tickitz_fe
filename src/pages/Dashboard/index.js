@@ -47,7 +47,7 @@ const Dashboard = ()=> {
         }))
         axios({
             method: 'GET',
-            url: `http://localhost:3000/api/v1/movies/?title=${title}&categories=${categories}&release_date=${release_date}&order=${order}&sortBy=${sortBy}`
+            url: `https://tickitz-backend-dio.herokuapp.com/api/v1/movies/?title=${title}&categories=${categories}&release_date=${release_date}&order=${order}&sortBy=${sortBy}`
         }).then((res) => {
             setMovieDetails ({
                 loading: false,
@@ -62,7 +62,7 @@ const Dashboard = ()=> {
             const result = await axios ({
                 method: 'POST',
                 data: formAdd,
-                url: 'http://localhost:3000/api/v1/movies/',
+                url: 'https://tickitz-backend-dio.herokuapp.com/api/v1/movies/',
                 headers: {
                     authorization: data.token
                 }
@@ -82,7 +82,7 @@ const Dashboard = ()=> {
         if(window.confirm('Are you sure?')) {
             axios({
                 method: 'DELETE',
-                url: `http://localhost:3000/api/v1/movies/${id_movies}`,
+                url: `https://tickitz-backend-dio.herokuapp.com/api/v1/movies/${id_movies}`,
                 headers: {
                     authorization: data.token
                 }
@@ -108,7 +108,7 @@ const Dashboard = ()=> {
             const result = await axios ({
                 method: 'PATCH',
                 data: formEdit,
-                url: `http://localhost:3000/api/v1/movies/${formEdit.id_movies}`,
+                url: `https://tickitz-backend-dio.herokuapp.com/api/v1/movies/${formEdit.id_movies}`,
                 headers: {
                     authorization: data.token
                 }
@@ -183,7 +183,7 @@ const Dashboard = ()=> {
                     {movieDetails.results.data.map((movies, index) => {
                         return (
                         <div className="card-size card-movie d-flex flex-column mt-5 border p-2 justify-content-center align-items-center rounded-3" key={index}>
-                            <img className="card-movie-list image-size rounded-3" src={`http://localhost:3000/uploads/${movies.cover}`} alt={movies.title}/>
+                            <img className="card-movie-list image-size rounded-3" src={`https://tickitz-backend-dio.herokuapp.com/${movies.cover}`} alt={movies.title}/>
                             <p className="text-center mt-2">{movies.title}</p>
                             <p className="text-center">{movies.categories}</p>
                             <p className="text-center">{movies.release_date}</p>

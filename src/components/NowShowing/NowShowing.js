@@ -29,7 +29,7 @@ const NowShowing = () => {
               <li>
                 <div className="image-card items" key={index}>
                   <img
-                    src={`${process.env.REACT_APP_URL_BE}/uploads/${movies.cover}`}
+                    src={`https://tickitz-backend-dio.herokuapp.com/uploads/${movies.cover}`}
                     alt={movies.title}
                   />
                   <p>{movies.title}</p>
