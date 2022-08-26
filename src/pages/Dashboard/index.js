@@ -15,7 +15,6 @@ import './Dashboard.css'
 const Dashboard = ()=> {
     const {data} = useSelector((state) => state.auth);
     const [search, setSearch] = useState('title')
-    console.log(data)
 
     const [movieDetails, setMovieDetails] = useState({
         loading: 'false',
