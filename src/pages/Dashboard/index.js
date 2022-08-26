@@ -183,7 +183,7 @@ const Dashboard = ()=> {
                     {movieDetails.results.data.map((movies, index) => {
                         return (
                         <div className="card-size card-movie d-flex flex-column mt-5 border p-2 justify-content-center align-items-center rounded-3" key={index}>
-                            <img className="card-movie-list image-size rounded-3" src={`https://tickitz-backend-dio.herokuapp.com/${movies.cover}`} alt={movies.title}/>
+                            <img className="card-movie-list image-size rounded-3" src={`https://tickitz-backend-dio.herokuapp.com/uploads/${movies.cover}`} alt={movies.title}/>
                             <p className="text-center mt-2">{movies.title}</p>
                             <p className="text-center">{movies.categories}</p>
                             <p className="text-center">{movies.release_date}</p>
