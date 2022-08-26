@@ -1,8 +1,7 @@
 const initialState = {
     loading: false,
     data: {
-        "user_id": null,
-        "token": null,
+    
     },
     error:null,
     isLogin: false

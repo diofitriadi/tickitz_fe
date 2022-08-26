@@ -1,22 +1,15 @@
+import React from 'react'
+import {Link, Navigate, Outlet} from 'react-router-dom'
 import logo from './img/brandlogo.svg'
-import {useSelector, useDispatch} from 'react-redux'
-import { Link } from 'react-router-dom';
+import './NavAdmin.css';
 import { AuthLogout } from '../../redux/action/Auth';
-import React from 'react';
-import './Navbar.css';
+import {useSelector, useDispatch} from 'react-redux'
 
-
-
-const Navbar = ()=> {
+const NavAdmin = ()=> {
     const dispatch = useDispatch()
+    
     const {isLogin} = useSelector((state)=> state.auth)
-    // useEffect(()=> {
-    //     if(!isLogin) {
-    //         navigate('/login', {replace: true})
-    //     }
-    // }, [isLogin])
     return(
-        <>
         <nav>
             <div className="logo">
                 <Link to="#"><img src={logo} alt="logo"/></Link>
@@ -26,9 +19,10 @@ const Navbar = ()=> {
                     <i className="fas fa-bars"></i>
                 </label>
                 <ul>
-                    <li><Link to="active" href="#" style={{color: '#5F2EEA'}}>Home</Link></li>
-                    <li><Link to="main-page/main-2.html">List Movies</Link></li>
-                    {/* harus diganti tombol button ID */}
+                    <li><Link to="active" href="#">Dashboard</Link></li>
+                    <li><Link to="main-page/main-2.html">Manage Movies</Link></li>
+                    <li><Link to="Login Page/registration.html">Manage Schedules</Link></li>
+                    <li>
                     <li><Link to={'/'}>
                         {isLogin ? (
                             <button className='rounded-2' onClick={()=> {
@@ -39,11 +33,11 @@ const Navbar = ()=> {
                         <Link to='/registration'><button className='rounded-2'>Sign-Up</button></Link>
                         )}
                         </Link>
+                    </li>                   
                     </li>
                     <p> © 2020 Tickitz. All Rights Reserved.</p>
                 </ul>
             </nav>
-        </>
     )
 }
-export default Navbar;
+export default NavAdmin;

@@ -28,7 +28,7 @@
 }
 .toogle {
   background-color: #c8c9cd;
-  height: 78vh;
+  height: 95vh;
 }
 
 .toogle section {
@@ -39,7 +39,7 @@
 }
 .toogle section p {
   color:#5F2EEA;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .toogle section p:first-child {
@@ -49,20 +49,21 @@
   text-decoration: none;
 }
 .toogle section p:last-child {
-  font-size: .9em;
+  font-size: 1em;
 }
 .toogle section p:first-child:hover {
   padding-bottom: 3px;
   border-bottom: 3px solid #5F2EEA;
 }
 .toogle section p a {
+  color: #5F2EEA;
   text-decoration: none;
 }
 
 .card-movie {
-  margin: 1em;
   margin-top: .7em;
   padding: 2em;
+  margin-left: -10px
 }
 
 .card-movie ul {
@@ -88,19 +89,20 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  flex-wrap: wrap
+  flex-wrap: wrap;
+  width: 13vw;
 }
 .card-movie ul li .image-card p {
   color: #14142B;
   font-weight: 700;
   margin-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  font-size: .8em;
 }
 .card-movie ul li .image-card p span {
   font-family: 'Open-Sans';
   font-size: .9em;
   color: #A0A3BD;
-  font-weight: 400;
 }
 
 .card-movie ul li .image-card button {
@@ -108,6 +110,7 @@
   color: #5F2EEA;
   border: 1px solid #5F2EEA;
   margin-top: 1em;
+  font-size: .9em;
 }
 .card-movie ul li .image-card button:hover {
   background-color: #5F2EEA;
@@ -116,8 +119,8 @@
   transition: .3s;
 }
 .card-movie ul li .image-card img {
-  width: 13vw;
-  height: 42vh;
+  width: 150px;
+  height: 230px;
 }
 
 

@@ -31,7 +31,7 @@ nav {
   nav ul li a{
     color: #f2f2f2;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 1em;
     font-weight: 500;
     padding: 8px 15px;
     letter-spacing: 1px;
@@ -41,8 +41,7 @@ nav {
   button {
     background-color: #5F2EEA;
     color: #fff;
-    border-radius: 5px;
-    padding: .5em 1.5em;
+    padding: .25em 1em;
     cursor: pointer;
     margin-right: 1em;
   }

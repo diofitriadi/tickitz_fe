@@ -5,8 +5,17 @@ import { Navigate, Outlet } from "react-router-dom"
 
 
 export const VerifyUser = () => {
-    const {isLogin} = useSelector(state => state.auth)
+    const {data} = useSelector(state => state.auth)
     return (
-        isLogin? <Navigate to="/"/> : <Outlet/>
+        // data.role === "user" ? <Navigate to="/"/> : <Outlet/>
+        data && data.role === "user" ? <Navigate to="/"/> : data && data.role === "admin" ? <Navigate to="/dashboard"/> : <Outlet/>
+        
+    )
+}
+
+export const VerifyAdmin = () => {
+    const {data} = useSelector(state => state.auth) 
+    return (
+        data.role === "user" ? <Navigate to="/"/> : <Outlet/>
     )
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AuthLogin } from "../../redux/action/Auth";
@@ -7,24 +7,42 @@ import brandLogo from "../Registration/img/brandlogowhite.png";
 import spiderman from "../Registration/img/signup_spiderman.png";
 
 const Login = () => {
-  const { isLogin } = useSelector((state) => state.auth);
+  const { loading, data, error, isLogin } = useSelector((state) => state.auth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  
   const [formAddData, setFormAddData] = useState({
     email: "",
     password: "",
   });
+  
   const handleLogin = (e) => {
     e.preventDefault();
     dispatch(AuthLogin(formAddData));
+  }
+  
     // tambah kondisi loading, data, error
-    if (isLogin === true) {
-      alert("Login Success");
-      navigate("/", { replace: true });
-    } else {
-      navigate("/Login", { replace: true });
+  const [disable, setDisable] = useState(false)
+
+  useEffect(()=> {
+    if (loading === true) {
+      setDisable(true)
     }
-  };
+    if (isLogin === true) {
+      if(data.role === "user") {
+        alert("Login Success");
+        setDisable(false)
+        navigate("/", { replace: true });
+      } else if (data.role === "admin") {
+        alert("Login Success")
+        setDisable(false)
+        navigate("/dashboard", {replace: true})
+      } 
+    } else if (error) {
+      alert("username or password is wrong")
+      setDisable(false)
+    } 
+  },[data, loading, error])
 
   return (
     <>
@@ -41,8 +59,7 @@ const Login = () => {
             <form onSubmit={(e) => handleLogin(e)}>
               <h3>Sign In</h3>
               <p>
-                Sign in with your data that you entered during
-                <br /> your registration
+                Sign in with your data that you entered <br/>during your registration
               </p>
               <div className="input-container">
                 <label htmlFor="email">Email</label>
@@ -77,20 +94,26 @@ const Login = () => {
                   icon="eye"
                 />
               </div>
+              {disable ? 
+              <input 
+                type="submit"
+                name="signin"
+                value="Sign In"
+                onSubmit={(e) => handleLogin(e)}
+                style={{opacity: 0.5, backgroundColor: '#fff'}}
+                disabled
+              /> : 
               <input
                 type="submit"
                 name="signin"
                 value="Sign In"
                 onSubmit={(e) => handleLogin(e)}
-              />
+              />}
               <p className="text-center">
-                {" "}
-                Forgot your password ?{" "}
+                Forgot your password ?
                 <a href="reset_password.html">Reset Now</a>
               </p>
-              <br />
               <p className="text-center">
-                {" "}
                 Don't have an account ? <a href="/registration">Sign Up</a>
               </p>
             </form>
@@ -100,7 +123,6 @@ const Login = () => {
     </>
   );
 };
-
 export default Login;
 
 // const [userLogin, setUserLogin] = useState(JSON.parse(localStorage.getItem('userLogin'))??{})
@@ -108,7 +130,7 @@ export default Login;
 //     if(userLogin.isLogin === true) {
 //         navigate('/', {replace: true})
 //     } else {
-//         navigate('/Login', {replace: true})
+//         navigate('/login', {replace: true})
 //     }
 // },[userLogin])
 // const handleLogin = async (e)  => {
