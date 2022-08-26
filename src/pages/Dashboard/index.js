@@ -13,7 +13,7 @@ import './Dashboard.css'
 
 
 const Dashboard = ()=> {
-    const { loading, data, error, isLogin } = useSelector((state) => state.auth);
+    const {data} = useSelector((state) => state.auth);
     const [search, setSearch] = useState('title')
     console.log(data)
 

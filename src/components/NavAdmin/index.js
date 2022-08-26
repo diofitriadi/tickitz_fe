@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link, Navigate, Outlet} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import logo from './img/brandlogo.svg'
 import './NavAdmin.css';
 import { AuthLogout } from '../../redux/action/Auth';
