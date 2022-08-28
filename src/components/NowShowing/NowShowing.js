@@ -57,7 +57,7 @@ export default NowShowing;
 //     }))
 //     axios({
 //         method: 'GET',
-//         url: 'https://tickitz-backend-dio.herokuapp.com/api/v1/movies/',
+//         url: '${process.env.REACT_APP_URL_BE}/api/v1/movies/',
 //     }).then((res)=> {
 //         setMovies ({
 //             loading: false,

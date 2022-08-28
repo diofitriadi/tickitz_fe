@@ -50,7 +50,7 @@ const Dashboard = ()=> {
         }))
         axios({
             method: 'GET',
-            url: `https://tickitz-backend-dio.herokuapp.com/api/v1/movies/?title=${title}&categories=${categories}&release_date=${release_date}&order=${order}&sortBy=${sortBy}`
+            url: `${process.env.REACT_APP_URL_BE}/api/v1/movies/?title=${title}&categories=${categories}&release_date=${release_date}&order=${order}&sortBy=${sortBy}`
         }).then((res) => {
             setMovieDetails ({
                 loading: false,
@@ -71,7 +71,7 @@ const Dashboard = ()=> {
             const result = await axios ({
                 method: 'POST',
                 data: formData,
-                url: 'https://tickitz-backend-dio.herokuapp.com/api/v1/movies/',
+                url: `${process.env.REACT_APP_URL_BE}/api/v1/movies/`,
                 headers: {
                     authorization: data.token
                 }
@@ -91,7 +91,7 @@ const Dashboard = ()=> {
         if(window.confirm('Are you sure?')) {
             axios({
                 method: 'DELETE',
-                url: `https://tickitz-backend-dio.herokuapp.com/api/v1/movies/${id_movies}`,
+                url: `${process.env.REACT_APP_URL_BE}/api/v1/movies/${id_movies}`,
                 headers: {
                     authorization: data.token
                 }
@@ -118,7 +118,7 @@ const Dashboard = ()=> {
             const result = await axios ({
                 method: 'PATCH',
                 data: formData,
-                url: `https://tickitz-backend-dio.herokuapp.com/api/v1/movies/${idMovies}`,
+                url: `${process.env.REACT_APP_URL_BE}/api/v1/movies/${idMovies}`,
                 headers: {
                     authorization: data.token
                 }
@@ -194,7 +194,7 @@ const Dashboard = ()=> {
                         var date = curr.toISOString().substr(0,10);
                         return (
                         <div className="card-size card-movie d-flex flex-column mt-5 border p-2 justify-content-center align-items-center rounded-3" key={index}>
-                            <img className="card-movie-list image-size rounded-3 mt-2" src={`https://tickitz-backend-dio.herokuapp.com/uploads/${movies.cover}`} alt={movies.title}/>
+                            <img className="card-movie-list image-size rounded-3 mt-2" src={`${process.env.REACT_APP_URL_BE}/uploads/${movies.cover}`} alt={movies.title}/>
                             <p className="text-center mt-2 mx-2">{movies.title}</p>
                             <p className="text-center mx-1">{movies.categories}</p>
                             <p className="text-center">{moment(movies.release_date).format('DD MMMM YYYY')}</p>
