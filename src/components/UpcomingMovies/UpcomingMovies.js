@@ -17,15 +17,15 @@ const UpcomingMovies = ()=> {
         </div>
         <div className="card-date">
             <ul>
-                <li><button>September</button></li>
-                <li><button>October</button></li>
-                <li><button>November</button></li>
-                <li><button>Desember</button></li>
-                <li><button>January</button></li>
-                <li><button>February</button></li>
-                <li><button>March</button></li>
-                <li><button>April</button></li>
-                <li><button>May</button></li>
+                <li><button className="button-showing">September</button></li>
+                <li><button className="button-showing">October</button></li>
+                <li><button className="button-showing">November</button></li>
+                <li><button className="button-showing">Desember</button></li>
+                <li><button className="button-showing">January</button></li>
+                <li><button className="button-showing">February</button></li>
+                <li><button className="button-showing">March</button></li>
+                <li><button className="button-showing">April</button></li>
+                <li><button className="button-showing">May</button></li>
             </ul>
         </div>
         <div className="card-movie">
@@ -33,7 +33,6 @@ const UpcomingMovies = ()=> {
                 <li>
                     <div className="card-image new-item item-4">
                         <img src={blackWidowPic} alt="blackWidow"/>
-                        
                     </div>
                 </li>
                 <li>

@@ -102,15 +102,16 @@ const Register = () => {
             <div className="input-container">
               <label htmlFor="image">Image</label>
               <input
-                type={"file"}
+                type="file"
                 name="image"
                 id="image"
                 placeholder="Insert Image Link"
                 alt=""
+                required
                 onChange={(e) => {
                   setFormAddRegister((prevData) => ({
                     ...prevData,
-                    image: e.target.value,
+                    image: e.target.files[0],
                   }));
                 }}
               />

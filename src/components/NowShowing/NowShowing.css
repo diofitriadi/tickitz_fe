@@ -123,27 +123,37 @@
   height: 230px;
 }
 
+.button-showing {
+  color: #fff !important;
+}
+
 
   /* card info */
 
   @media (max-width: 920px) {
+  .toogle {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }  
+  .card-movie {
+    display: flex;
+    width: 70%;
+    margin: auto;
+  }
   .card-movie ul {
       display: flex;
+      flex-direction: row;
       flex-wrap: wrap;
-      flex-direction: row;
-      flex-grow: 1;
-      justify-content: space-evenly;
   }
-  .card-movie ul {
-      list-style-type: none;
-      display: flex;
-      justify-content: flex-start;
-      flex-wrap: nowrap;
-      flex-direction: row;
-      overflow: auto;
-  }
+  .card-movie ul li{
+    display: flex;
+    width: 200%;
+    margin: auto;
+    margin-bottom: 50px;
+}
   .card-movie ul li .image-card img {
-  width: 13vw;
+  width: 200px;
   height: 42vh;
 }
 

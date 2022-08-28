@@ -24,7 +24,6 @@ const NowShowing = () => {
       <div className="card-movie">
         <ul>
           {getMovies.data.data.map((movies, index) => {
-            console.log(`${process.env.REACT_APP_URL_BE}`, 'xixixixi')
             return (
               <li>
                 <div className="image-card items" key={index}>
@@ -34,7 +33,7 @@ const NowShowing = () => {
                   />
                   <p>{movies.title}</p>
                   <p>{movies.categories}</p>
-                  <button className="rounded-2">Details</button>
+                  <button className="rounded-2 button-showing"><Link to="/movie-details">Details</Link></button>
                 </div>
               </li>
             );

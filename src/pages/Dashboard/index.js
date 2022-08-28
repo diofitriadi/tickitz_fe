@@ -25,18 +25,21 @@ const Dashboard = ()=> {
     
     //add
     const [refetch, setRefetch] = useState(false)
-    const [formAdd, setFormAdd] = useState({
-        cover: "",
-        title: "",
-        categories: "",
-        release_date: "",
-        director: "",
-        duration: "",
-        casts: "",
-        synopsis: "",
-    })
-
+    const [formAdd, setFormAdd] = useState({})
     const [formEdit, setFormEdit] = useState({})
+    
+    const formData = new FormData()
+    formData.append("cover", formEdit.cover || formAdd.cover)
+    formData.append("title", formEdit.title || formAdd.title)
+    formData.append("categories", formEdit.categories || formAdd.categories)
+    formData.append("release_date", formEdit.release_date || formAdd.release_date)
+    formData.append("director", formEdit.director || formAdd.director)
+    formData.append("duration", formEdit.duration || formAdd.duration)
+    formData.append("casts", formEdit.casts || formAdd.casts)
+    formData.append("synopsis", formEdit.synopsis || formAdd.synopsis)
+
+
+    
     const [query, setQuery] = useState ({})
 
     useEffect( () => {
@@ -56,12 +59,18 @@ const Dashboard = ()=> {
         })
     }, [refetch, query])
 
+    const handleAdd = async(date) => {
+        setFormAdd({
+            release_date: date
+        })
+    }
+
     const handleAddMovies = async(e) => {
         e.preventDefault()
         try {
             const result = await axios ({
                 method: 'POST',
-                data: formAdd,
+                data: formData,
                 url: 'https://tickitz-backend-dio.herokuapp.com/api/v1/movies/',
                 headers: {
                     authorization: data.token
@@ -95,10 +104,11 @@ const Dashboard = ()=> {
         }
     }
     
-    const handleEdit = async(prevData) => {
+    const [idMovies, setIdMovies] = useState(0)
+    const handleEdit = async(prevData, date) => {
         setFormEdit({
             ...prevData,
-            release_date: moment(prevData.release_date).format('YYYY-MM-DD')
+            release_date: date
         })
     }
 
@@ -107,8 +117,8 @@ const Dashboard = ()=> {
         try {
             const result = await axios ({
                 method: 'PATCH',
-                data: formEdit,
-                url: `https://tickitz-backend-dio.herokuapp.com/api/v1/movies/${formEdit.id_movies}`,
+                data: formData,
+                url: `https://tickitz-backend-dio.herokuapp.com/api/v1/movies/${idMovies}`,
                 headers: {
                     authorization: data.token
                 }
@@ -124,11 +134,10 @@ const Dashboard = ()=> {
             console.log(err)
         }
     }
-    console.log(formEdit, 'edit')
     return(
         <>
         <NavAdmin/>
-        <div className="form-filter m-5 px-4 ">
+        <div className="form-filter m-5 mx-auto px-4 main-parent">
             <div className="row mb-3">
                 <div className="col-4">
                 <input placeholder='Search Movies' onChange={(e) => {
@@ -181,14 +190,20 @@ const Dashboard = ()=> {
                 <button className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addNewMovies">Add new Movies</button>
                 <div className="cards-movie d-flex flex-wrap justify-content-between">
                     {movieDetails.results.data.map((movies, index) => {
+                        var curr = new Date(movies.release_date);
+                        var date = curr.toISOString().substr(0,10);
                         return (
                         <div className="card-size card-movie d-flex flex-column mt-5 border p-2 justify-content-center align-items-center rounded-3" key={index}>
-                            <img className="card-movie-list image-size rounded-3" src={`https://tickitz-backend-dio.herokuapp.com/uploads/${movies.cover}`} alt={movies.title}/>
-                            <p className="text-center mt-2">{movies.title}</p>
-                            <p className="text-center">{movies.categories}</p>
-                            <p className="text-center">{movies.release_date}</p>
+                            <img className="card-movie-list image-size rounded-3 mt-2" src={`https://tickitz-backend-dio.herokuapp.com/uploads/${movies.cover}`} alt={movies.title}/>
+                            <p className="text-center mt-2 mx-2">{movies.title}</p>
+                            <p className="text-center mx-1">{movies.categories}</p>
+                            <p className="text-center">{moment(movies.release_date).format('DD MMMM YYYY')}</p>
                             <div className="d-flex justify-content-center mt-2">
-                                <button className="btn btn-primary m-2" onClick={() => handleEdit(movies)} data-bs-toggle="modal" data-bs-target="#editMovies">Edit</button>
+                                <button className="btn btn-primary m-2" onClick={() => {
+                                    setIdMovies(movies.id_movies)
+                                    handleEdit(movies, date)
+                                }}
+                                 data-bs-toggle="modal" data-bs-target="#editMovies">Edit</button>
                                 <button className="btn btn-primary m-2" onClick={() => handleDelete(movies.id_movies)}>Delete</button>
                             </div>
                         </div>
@@ -201,13 +216,13 @@ const Dashboard = ()=> {
                         <div className="modal-content">
                             <div className="modal-header">
                                 <h5 className="modal-title" id="addNewMoviesLabel">Add New Movies</h5>
-                                <button type="button" className="close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <button type="button" className="close" data-bs-dismiss="modal" aria-label="Close" onClick={()=> handleAdd()}></button>
                             </div>
                             <form onSubmit= {(e) => handleAddMovies(e)}>
                                 <div className="modal-body">
                                     <div className="mb-3">
                                         <label htmlFor="cover" className="form-label">Cover</label>
-                                        <input type="text" className="form-control" id="cover" onChange={(e) => {setFormAdd(prevState => ({...prevState, cover: e.target.value }))
+                                        <input type="file" className="form-control" id="cover" onChange={(e) => {setFormAdd(prevState => ({...prevState, cover: e.target.files[0] }))
                                     }} />
                                     </div>
                                     <div className="mb-3">
@@ -222,7 +237,7 @@ const Dashboard = ()=> {
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="release_date" className="form-label">Release Date</label>
-                                        <input type="text" className="form-control" id="release_date" onChange={(e) => {setFormAdd(prevState => ({ ...prevState, release_date: e.target.value }))
+                                        <input type="date" className="form-control" id="release_date" onChange={(e) => {setFormAdd(prevState => ({ ...prevState, release_date: e.target.value }))
                                     }} />
                                     </div>
                                     <div className="mb-3">
@@ -262,12 +277,12 @@ const Dashboard = ()=> {
                                 <h5 className="modal-cover" id="editMoviesLabel">Edit Movies</h5>
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <form onSubmit={(e) => handleUpdateMovies(e)}>
+                            <form onSubmit={(e) => handleUpdateMovies(e)} encType='multipart/form-data'>
                                 <div className="modal-body">
                                     <div className="mb-3">
                                         <label htmlFor="cover" className="form-label">cover</label>
-                                        <input type="text" className="form-control" id="cover" value={formEdit.cover} onChange={(e) => {
-                                            setFormEdit(prevState => ({ ...prevState, cover: e.target.value }))
+                                        <input type="file" className="form-control" id="cover" defaultValue={formEdit.cover} onChange={(e) => {
+                                            setFormEdit(prevState => ({ ...prevState, cover: e.target.files[0] }))
                                         }} />
                                     </div>
                                     <div className="mb-3">
@@ -277,14 +292,14 @@ const Dashboard = ()=> {
                                         }} />
                                     </div>
                                     <div className="mb-3">
-                                        <label htmlFor="categories" className="form-label">Release Date</label>
+                                        <label htmlFor="categories" className="form-label">Categories</label>
                                         <input type="text" className="form-control" id="categories" value={formEdit.categories} onChange={(e) => {
                                             setFormEdit(prevState => ({ ...prevState, categories: e.target.value }))
                                         }} />
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="release_date" className="form-label">release_date</label>
-                                        <input type="text" className="form-control" id="release_date" value={formEdit.release_date} onChange={(e) => {
+                                        <input type="date" className="form-control" id="release_date" defaultValue={formEdit.release_date} onChange={(e) => {
                                             setFormEdit(prevState => ({ ...prevState, release_date: e.target.value }))
                                         }} />
                                     </div>

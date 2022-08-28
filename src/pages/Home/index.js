@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from '../../components/Navbar/Navbar'
+import NavUser from '../../components/NavUser/NavUser'
 import NowShowing from '../../components/NowShowing/NowShowing'
 import MainSection from '../../components/MainSection/MainSection'
 import UpcomingMovies from '../../components/UpcomingMovies/UpcomingMovies'
@@ -30,7 +30,7 @@ const Home = ()=> {
     // }
     return(
         <>
-        <Navbar />
+        <NavUser />
         <MainSection />
         <NowShowing />
         <UpcomingMovies />

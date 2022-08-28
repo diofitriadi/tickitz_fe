@@ -64,3 +64,7 @@
     margin-left: -35px;
     border-radius: 10px;
   }
+  
+  .button-showing {
+    color: #fff !important;
+  }

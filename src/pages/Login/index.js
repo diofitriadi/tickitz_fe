@@ -7,7 +7,9 @@ import brandLogo from "../Registration/img/brandlogowhite.png";
 import spiderman from "../Registration/img/signup_spiderman.png";
 
 const Login = () => {
-  const { loading, data, error, isLogin } = useSelector((state) => state.auth);
+  const { loading, data, error, isLogin } = useSelector((state) => state.auth);    
+
+  const [disable, setDisable] = useState(false)
   const navigate = useNavigate();
   const dispatch = useDispatch();
   
@@ -20,10 +22,7 @@ const Login = () => {
     e.preventDefault();
     dispatch(AuthLogin(formAddData));
   }
-  
-    // tambah kondisi loading, data, error
-  const [disable, setDisable] = useState(false)
-
+  // tambah kondisi loading, data, error  
   useEffect(()=> {
     if (loading === true) {
       setDisable(true)
@@ -43,7 +42,6 @@ const Login = () => {
       setDisable(false)
     } 
   },[data, loading, error])
-
   return (
     <>
       <div className="container-login">

@@ -3,7 +3,7 @@ import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
 import MainNavigation from './mainNavigation';
 import { store, persistor } from './redux/store'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {

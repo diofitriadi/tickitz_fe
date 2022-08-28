@@ -1,13 +1,25 @@
+.main-parent {
+  font-size: .9em;
+  width: 85%;
+}
+
 .image-size {
-  width: 190px;
-  height: 270px;
+  width: 140px;
+  height: 200px;
+  border-radius:
 }
 
 .card-size {
-  width: 250px;
-  height: 440px;
+  width: 19%;
 }
 
+button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #5F2EEA !important;
+  border: none !important;
+}
 
 /* .btn {
   display: flex;
