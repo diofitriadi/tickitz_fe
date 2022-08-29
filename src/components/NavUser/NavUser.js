@@ -2,8 +2,10 @@ import logo from './img/brandlogo.svg'
 import {useSelector, useDispatch} from 'react-redux'
 import { Link } from 'react-router-dom';
 import { AuthLogout } from '../../redux/action/Auth';
-import React from 'react';
+import React, {useState} from 'react';
+import { FaBars, FaTimes } from "react-icons/fa";
 import './NavUser.css';
+// import './tes.scss'
 
 
 
@@ -11,38 +13,35 @@ import './NavUser.css';
 const NavUser = ()=> {
     const dispatch = useDispatch()
     const {isLogin} = useSelector((state)=> state.auth)
-    // useEffect(()=> {
-    //     if(!isLogin) {
-    //         navigate('/login', {replace: true})
-    //     }
-    // }, [isLogin])
+    const [ toggle, setToggle ] = useState(false)
     return(
         <>
-        <nav>
-            <div className="logo">
-                <Link to="#"><img src={logo} alt="logo"/></Link>
+        <nav className='navbar'>
+            <div className='container'>
+            <div className='logo'>
+                <Link to="/"><div className='imgbox'><img src={logo} alt="logo" title="Tickitz" /></div></Link>
+                <div className={toggle ? 'navmenu active' : 'navmenu'}>
+                <div className="links">
+                <Link to="/"><div className='navlinks active'>Home</div></Link>
+                <Link to="/movies"><div className='navlinks'>List Movies</div></Link>
+                </div>
+                <div className='navbutton' >
+                    <Link to={'/'}>
+                        {isLogin ? (
+                            <button className='button-nav' onClick={()=> {
+                                dispatch(AuthLogout())
+                                alert('Logout Success')
+                            }}>Logout</button>
+                        ): (<Link to='/registration'><button className='button-nav'>Sign-Up</button></Link>)}
+                    </Link>
+                </div>
+                </div>
+                <div className="nav-icon" onClick={() => setToggle(!toggle)}>
+                {toggle ? <FaTimes /> : <FaBars />}
+                </div>
             </div>
-                <input type="checkbox" id="click"/>
-                <label htmlFor="click" className="menu-btn">
-                    <i className="fas fa-bars"></i>
-                </label>
-                <ul>
-                    <li><Link to="active" href="#" style={{color: '#5F2EEA'}}>Home</Link></li>
-                    <li><Link to="main-page/main-2.html">List Movies</Link></li>
-                    <li><Link to={'/'}>
-                            {isLogin ? (
-                                <button className='rounded-2' onClick={()=> {
-                                    dispatch(AuthLogout())
-                                    alert('Logout Success')
-                                }}>Logout</button>
-                            ): (
-                            <Link to='/registration'><button className='rounded-2'>Sign-Up</button></Link>
-                            )}
-                        </Link>
-                    </li>
-                    <p> © 2020 Tickitz. All Rights Reserved.</p>
-                </ul>
-            </nav>
+            </div>
+        </nav>
         </>
     )
 }
