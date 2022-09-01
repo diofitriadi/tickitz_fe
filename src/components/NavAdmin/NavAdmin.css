@@ -49,6 +49,7 @@
 }
 .nav-bar .nav-logo .nav-menu .link-nav a .nav-links {
   font-size: 16px;
+  
 }
 
 .nav-bar .nav-logo .nav-menu .link-nav a .nav-links:hover {
@@ -58,12 +59,12 @@
 .nav-bar .nav-logo .nav-button a .button-navigation {
   padding: 10px 35px;
   border-radius: 30px;
-  border: none;
   font-family: "Rubik", sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #fff;
-  background: #5F2EEA;
+  color: #5F2EEA;
+  border: 1px solid #5F2EEA !important;
+  background: #fff !important;
   outline: none;
   border: 2px solid #5F2EEA;
   transition: all 0.3s ease-in-out;
@@ -71,8 +72,9 @@
 }
 
 .nav-bar .nav-logo .nav-button a .button-navigation:hover {
-  background: #fff;
-  color: #5F2EEA;
+  color: #fff !important;
+  background: #5F2EEA !important;
+  border: 1px solid #eaeaea !important;
 }
 
 .nav-bar .nav-logo .nav-icons {
@@ -83,6 +85,7 @@
 @media screen and (max-width: 768px) {
   .nav-bar {
     margin-left: 0;
+    width: 100%;
   }
   .nav-bar .nav-logo {
     display: flex;
@@ -106,6 +109,13 @@
     background: #fff;
   }
 
+  .nav-bar .nav-logo .nav-menu .link-nav {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    
+  }
+
   .nav-bar .nav-logo .nav-menu .nav-links {
     display: flex;
     flex-direction: column;
@@ -126,21 +136,31 @@
     font-family: "Rubik", sans-serif;
     font-size: 14px;
     font-weight: 600;
-    color: #fff;
-    background: #5F2EEA;
-    outline: none;
-    border: 2px solid #5F2EEA;
+    color: #5F2EEA !important;
+    border: 1px solid #5F2EEA !important;
+    background: #fff !important;
     transition: all 0.3s ease-in-out;
     margin-right: 100px;
   }
   
   .nav-logo .nav-menu .nav-button a .button-navigation:hover {
-    background: #fff;
-    color: #5F2EEA;
+    background: #5F2EEA !important;
+    color: #fff !important;
+    border: 2px solid #5F2EEA !important;
   }
+
   .nav-bar .nav-logo .nav-menu .nav-links a .nav-links {
     padding: 0;
   }
+
+  .nav-bar .nav-logo .nav-menu .link-nav a:first-child {
+    margin-top: 20px;
+  }
+  .nav-bar .nav-logo .nav-menu .link-nav a {
+    text-decoration: none;
+    margin-bottom: 20px;
+  }
+
   .nav-logo .nav-menu.nav-active {
     left: 0;
     opacity: 1;
