@@ -47,7 +47,7 @@ const Register = () => {
           </div>
         </div>
         <div className="right-signup">
-          <form action="sign-up" onSubmit={(e) => handleRegister(e)}>
+          <form action="sign-up" encType="multipart/form-data" onSubmit={(e) => handleRegister(e)}>
             <h3>Sign Up</h3>
             <p>Fill your additional details</p>
             <div className="input-container">
