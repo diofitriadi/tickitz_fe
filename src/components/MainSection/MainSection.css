@@ -23,7 +23,7 @@ main {
   main section span {
     font-size: 2em;
     color: #5F2EEA;
-    font-weight: bolder;
+    font-weight: 900 !important;
   }
 
   @media screen and (max-width: 920px) {

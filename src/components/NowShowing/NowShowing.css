@@ -1,172 +1,120 @@
 /* Show toogle section */
-.toogle section {
-  display: flex;
-  padding: 0 70px 0 70px;
-  justify-content: space-between;
-  margin-top: 1.5em;
-}
-.toogle section p {
-  color:#5F2EEA;
-  font-weight: 400;
-}
-
-.toogle section p:first-child {
-  font-size: 1.2em;
-  justify-content: center;
-  cursor: pointer;
-  text-decoration: none;
-}
-.toogle section p:last-child {
-  font-size: .9em;
-}
-.toogle section p:first-child:hover {
-  padding-bottom: 3px;
-  border-bottom: 3px solid #5F2EEA;
-}
-.toogle section p a {
-  text-decoration: none;
-}
 .toogle {
   background-color: #c8c9cd;
-  height: 95vh;
+  height: 100vh;
 }
 
-.toogle section {
+.toogle .heading {
   display: flex;
   padding: 0 70px 0 70px;
   justify-content: space-between;
   margin-top: 1.5em;
+  margin-bottom: 2em;
 }
-.toogle section p {
-  color:#5F2EEA;
+
+.toogle .heading h3 {
+  font-size: 20px;
+}
+
+.toogle .heading h3 a {
+  text-decoration: none;
+  color: #5F2EEA;
   font-weight: 500;
 }
 
-.toogle section p:first-child {
-  font-size: 1.2em;
-  justify-content: center;
-  cursor: pointer;
+.toogle .heading h3 a:hover{
+  text-decoration: underline;
+}
+
+.toogle .heading h5 {
+  font-size: 14px;
+}
+
+.toogle .heading h5 a {
   text-decoration: none;
-}
-.toogle section p:last-child {
-  font-size: 1em;
-}
-.toogle section p:first-child:hover {
-  padding-bottom: 3px;
-  border-bottom: 3px solid #5F2EEA;
-}
-.toogle section p a {
   color: #5F2EEA;
-  text-decoration: none;
 }
 
-.card-movie {
-  margin-top: .7em;
-  padding: 2em;
-  margin-left: -10px;
-  width: 100%;
+.toogle .heading h5 a:hover{
+  text-decoration: underline;
 }
 
-.card-movie ul {
-  list-style-type: none;
-  display: flex;
-  justify-content: space-between;
-}
 /* card movie */
-.card-movie ul li {
-  border: 1px solid white;
-  border-radius: 10px;
-  margin: 1em;
-  padding: 1em;
-  transition: all .2s ease-in-out;
+.card-movie {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 3em;
+  margin-left: 20px;
+  margin-right: 0;
 }
-.card-movie ul li:hover {
-  transform: scale(1.1);
-  background-color: white;
-}
-/* card info */
-.card-movie ul li .image-card {
+
+.card-info {
+  width: 195px;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
+  border-radius: 7px;
   align-items: center;
-  text-align: center;
-  flex-wrap: wrap;
-  width: 13vw;
-}
-.card-movie ul li .image-card p {
-  color: #14142B;
-  font-weight: 700;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-size: .8em;
-}
-.card-movie ul li .image-card p span {
-  font-family: 'Open-Sans';
-  font-size: .9em;
-  color: #A0A3BD;
+  padding: 30px 0 70px 0;
 }
 
-.card-movie ul li .image-card .button-showing {
-  background-color: white;
+.card-info img {
+  width: 140px;
+  height: 200px;
+  border-radius: 5px;
+}
+
+.card-info h3 {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.card-info h4 {
+  width: 80%;
+  height: 40px;
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.card-info .showing-button {
+  border-radius: 10px;
+}
+
+.card-info .showing-button a {
+  text-decoration: none;
   color: #5F2EEA;
+  background-color: #fff;
   border: 1px solid #5F2EEA;
-  margin-top: 1em;
-  font-size: .9em;
+  padding: 3px 10px;
+  border-radius: 7px !important;
+  transition: all 0.2s ease-in-out;
 }
 
-.card-movie ul li .image-card .button-showing a {
+.card-info .showing-button a:hover {
   text-decoration: none;
   color: #fff;
-  padding: .3em .7em;
-  border: 2px solid #fff;
-  border-radius: 4px;
-}
-
-.card-movie ul li .image-card .button-showing:hover {
   background-color: #5F2EEA;
-  color: white;
-  border: 1px solid white;
-  transition: .3s;
-}
-.card-movie ul li .image-card img {
-  width: 150px;
-  height: 230px;
 }
 
-..button-showing-showing {
-  color: #fff !important;
-}
-
-
-  /* card info */
-
-  @media (max-width: 920px) {
+@media (max-width: 920px) {
   .toogle {
     display: flex;
     flex-direction: column;
     height: 100%;
-  }  
+  }
   .card-movie {
     display: flex;
-    width: 100%;
-    margin-left: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
-  .card-movie ul {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-  }
-  .card-movie ul li{
+  .card-info {
+    width: 40%;
+    border-radius: 7px;
+    padding: 20px 0 20px 0;
     display: flex;
-    width: 200%;
-    margin: auto;
-    margin-bottom: 50px;
-  }
-  .card-movie ul li .image-card img {
-  width: 200px;
-  height: 42vh;
-  }
-.card-movie ul li .image-card p {
-  width: 120px;
+    margin-right: 20px;
+    margin-bottom: 3em;
   }
 }

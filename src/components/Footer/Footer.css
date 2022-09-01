@@ -1,74 +1,77 @@
 footer {
-    display: flex;
-    padding: 0 70px 0 70px;
-    justify-content: space-evenly;
-    font-size: 1em;
-  }
-  
-  footer .line-2 {
-    flex-direction: row;
-  }
-  footer .line-2 a {
-    text-decoration: none;
-    color: black;
-  }
-  footer .line-2 a:hover {
-    color: #5F2EEA;
-  }
-  footer .line-2  h3 {
-    margin-bottom: 2em;
-    font-size: 1.3em;
-  }
-  footer .line-2 h4 {
-    margin-bottom: 1em;
-    font-size: 1em;
-  }
-  footer .line-3 {
-    margin-bottom: 1em;
-    margin-left: 3em;
-    font-size: 1em;
-  }
+  display: flex;
+  padding: 0 70px 0 70px;
+  justify-content: space-evenly;
+  font-size: 15px;
+}
 
-  footer .line-3 .list {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    list-style-type: none;
-  }
-  footer .line-3 .list img {
-    width: 50%;
-    padding-bottom: 1em;
-  }
-  footer .line-3 h4 {
-    margin-bottom: 2em;
-    font-size: 1.2em;
-  }
-  footer .line-3 ul li {
-    margin-bottom: 2em;
-  }
-  
-  footer .line-4 ul {
-    list-style-type: none;
-  }
-  
-  footer .line-4 h4 {
-    margin-bottom: 2em;
-    font-size: 1.2em;
-  }
-  
-  footer .line-4 ul li {
-    margin-bottom: .7em;
-  }
+footer .line-1 p {
+  margin-bottom: 10px;
+}
 
-  footer .line-4 ul li img{
-    margin-left: -35px;
-  }
-  
-  .footer-bottom {
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
+footer .line-2 {
+  flex-direction: row;
+}
+footer .line-2 a {
+  text-decoration: none;
+  color: black;
+}
+footer .line-2 a:hover {
+  color: #5f2eea;
+}
+footer .line-2 h3 {
+  margin-bottom: 2em;
+  font-size: 1.3em;
+}
+footer .line-2 h4 {
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+footer .line-3 {
+  margin-bottom: 15px;
+  margin-left: 3em;
+  font-size: 15px;
+}
 
+footer .line-3 .list {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  list-style-type: none;
+}
+footer .line-3 .list img {
+  width: 50%;
+  padding-bottom: 15px;
+}
+footer .line-3 h4 {
+  margin-bottom: 2em;
+  font-size: 1.2em;
+}
+footer .line-3 ul li {
+  margin-bottom: 2em;
+}
+
+footer .line-4 ul {
+  list-style-type: none;
+}
+
+footer .line-4 h4 {
+  margin-bottom: 2em;
+  font-size: 1.2em;
+}
+
+footer .line-4 ul li {
+  margin-bottom: 0.7em;
+}
+
+footer .line-4 ul li img {
+  margin-left: -35px;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 
 @media (max-width: 920px) {
   footer {
@@ -87,8 +90,7 @@ footer {
   footer .line-2 .list h4:last-child {
     margin-left: 4em;
   }
-  
-  
+
   footer .line-3 {
     margin-top: 2em;
     margin-left: 0;
@@ -96,11 +98,10 @@ footer {
   footer .line-3 ul {
     margin-bottom: 20px;
   }
-  
+
   footer .line-3 .list {
     display: flex;
     flex-direction: row;
-    
   }
   footer .line-3 .list img {
     display: flex;
@@ -109,21 +110,21 @@ footer {
     padding: 10px;
   }
   footer .line-4 {
-    margin-top: 0;
+    margin-top: 1.5em;
   }
-  footer .line-4 ul{
+  footer .line-4 ul {
     display: flex;
     flex-direction: column;
   }
-  footer .line-4 ul li{
-    margin-bottom: .7em;
+  footer .line-4 ul li {
+    margin-bottom: 0.7em;
     display: flex;
     align-items: center;
   }
-  footer .line-4 ul li span{
-    margin-left: .5em;
+  footer .line-4 ul li span {
+    margin-left: 0.5em;
   }
   footer .line-4 h4 {
-    margin-bottom: 1em;
+    margin-bottom: 15px;
   }
 }

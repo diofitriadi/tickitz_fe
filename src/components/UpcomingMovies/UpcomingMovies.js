@@ -9,57 +9,39 @@ import './UpcomingMovies.css';
 const UpcomingMovies = ()=> {
     return(
         <>
-        <div className="upcoming-movies">
-            <section>
-                <p><Link to="#">Upcoming Movies</Link></p>
-                <p><Link to="#">view all</Link></p>
+        <div className='upcoming-movies'>
+            <section className='header-upcoming'>
+                <h3><Link to="">Upcoming Movies</Link></h3>
+                <h4><Link to="">View All</Link></h4>
             </section>
         </div>
-        <div className="card-date">
-            <ul>
-                <li><button className="button-showing">September</button></li>
-                <li><button className="button-showing">October</button></li>
-                <li><button className="button-showing">November</button></li>
-                <li><button className="button-showing">Desember</button></li>
-                <li><button className="button-showing">January</button></li>
-                <li><button className="button-showing">February</button></li>
-                <li><button className="button-showing">March</button></li>
-                <li><button className="button-showing">April</button></li>
-                <li><button className="button-showing">May</button></li>
-            </ul>
+        <div className='card-date'>
+            <h4><button className="button-showing">September</button></h4>
+            <h4><button className="button-showing">October</button></h4>
+            <h4><button className="button-showing">November</button></h4>
+            <h4><button className="button-showing">Desember</button></h4>
+            <h4><button className="button-showing">January</button></h4>
+            <h4><button className="button-showing">February</button></h4>
+            <h4><button className="button-showing">March</button></h4>
+            <h4><button className="button-showing">April</button></h4>
+            <h4><button className="button-showing">May</button></h4>
         </div>
-        <div className="card-movie">
-            <ul>
-                <li>
-                    <div className="card-image new-item item-4">
-                        <img src={blackWidowPic} alt="blackWidow"/>
-                    </div>
-                </li>
-                <li>
-                    <div className="card-image new-item item-5">
-                        <img src={theWitchesPic} alt="theWitches"/>
-                        
-                    </div>
-                </li>
-                <li>
-                    <div className="card-image new-item item-6">
-                        <img src={tenetPic} alt="tenet" />
-                        
-                    </div>
-                </li>
-                <li>
-                    <div className="card-image new-item item-4">
-                        <img src={blackWidowPic} alt="blackWidow"/>
-                        
-                    </div>
-                </li>
-                <li>
-                    <div className="card-image new-item item-5">
-                        <img src={theWitchesPic} alt="theWitches"/>
-                        
-                    </div>
-                </li>
-            </ul>
+        <div className="card-movies">
+            <div className="card-images">
+                <img src={blackWidowPic} alt="black widow"/>
+            </div>
+            <div className="card-images">
+                <img src={theWitchesPic} alt="the witches"/>
+            </div>
+            <div className="card-images">
+                <img src={tenetPic} alt="tenet"/>
+            </div>
+            <div className="card-images">
+                <img src={blackWidowPic} alt="black widow"/>
+            </div>
+            <div className="card-images">
+                <img src={theWitchesPic} alt="the witches"/>
+            </div>
         </div>
         </>
     )

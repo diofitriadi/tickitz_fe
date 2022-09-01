@@ -1,51 +1,66 @@
 .subscribe {
-    display: flex;
-    flex-direction: column;
-    margin: 5em 12em 7em 12em;
-    padding: 2em;
-    text-align: center;
-    box-shadow: 1px 1px 10px grey;
-    border-radius: 10px;
-  }
-  .subscribe h2 {
-    color: #4E4B66;
-    margin-bottom: .3em;
-  }
-  .subscribe h1 {
-    color: #5F2EEA;
-    margin-bottom: 1em;
-  }
-  .subscribe .input-subscribe input {
-    margin-left: 5em;
-    padding-left: 1em;
-    width: 35%;
-    height: 2.5em;
-    margin-bottom: 1em;
-    margin-right: .5em;
-  }
-  .subscribe p {
-    margin-top: 1.5em;
-    margin-bottom: 1em;
-    color: #6E7191;
-    font-size: 1em;
-  }
-
-@media (max-width: 1000px) {
-  .subscribe .input-subscribe input {
-    margin-left: 0;
-    width: 40%;
-  }
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+  justify-content: center;
+  margin: 7em 12em 7em 12em;
+  padding: 2em;
+  text-align: center;
+  box-shadow: 1px 1px 10px grey;
+  border-radius: 10px;
 }
+
+.subscribe .header-subs h2 {
+  font-weight: bold;
+  color: #4E4B66;
+  margin-bottom: .3em;
+}
+
+.subscribe .header-subs h1 {
+  font-weight: bolder;
+  color: #5F2EEA;
+  margin-bottom: 1.5em;
+}
+
+.subscribe .input-subs input {
+  width: 25vw;
+  margin-bottom: 1em;
+  padding: 3px 0 5px 3px;
+  border-radius: 2px;
+}
+
+.subscribe .input-subs .button-subs {
+  width: 25vw;
+  justify-content: center;
+  padding: 4px;
+  text-decoration: none;
+  color: #5F2EEA;
+  background-color: #fff !important;
+  border: 1px solid #5F2EEA !important;
+  transition: all 0.2s ease-in-out;
+}
+
+
+.subscribe .input-subs .button-subs:hover {
+  color: #fff !important;
+  background-color: #5F2EEA !important;
+}
+
+.subscribe .paragraph-subs {
+  font-size: 15px;
+  margin-top: 3em;
+}
+
 
 @media (max-width: 920px) {
   .subscribe {
     margin: 0 3em 0 3em;
   }
-  .subscribe .input-subscribe input {
+  .subscribe .input-subs input {
     margin-left: 0;
-    width: 100%;
+    width: 60vw;
   }
-  .subscribe .input-subscribe button {
+  .subscribe .input-subs .button-subs {
     width: 100%;
   }
 }
