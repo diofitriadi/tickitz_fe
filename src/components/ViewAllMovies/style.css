@@ -1,0 +1,93 @@
+.movies-card {
+  width: 220px;
+  height: 500px;
+}
+.movies-card .card-movie-list {
+  width: 150px;
+  height: 230px;
+}
+
+.movies-card .details-title {
+  margin-top: 1em;
+  display: flex;
+  width: 180px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.movies-card .details-categories {
+  font-size: 13px;
+}
+
+.movies-card .details-release {
+  font-size: 13px;
+}
+
+.movies-card .button-view-movies {
+  font-size: 15px;
+  padding: 5px 15px;
+  border-radius: 7px !important;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  background-color: #fff !important;
+  border: 1px solid #5F2EEA !important;
+  transition: all 0.2s ease-in-out;
+  margin-top: 3em;
+}
+
+
+.movies-card .button-view-movies:hover {
+  background-color: #5F2EEA !important;
+}
+
+.movies-card .button-view-movies a {
+  text-decoration: none;
+  color: #5F2EEA;
+}
+
+.movies-card .button-view-movies a:hover {
+  color: #fff;
+}
+
+.pagination-btn {
+  width: 100%;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #5F2EEA;
+  margin-top: 30px;
+}
+
+.pagination-btn a {
+  padding: 5px 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px solid #5F2EEA;
+  color: #5F2EEA;
+  text-decoration: none;
+  cursor: pointer; 
+}
+
+.pagination-btn a:hover {
+  color: #fff !important;
+  background-color: #5F2EEA;
+}
+
+.pagination-active a {
+  color: #fff !important;
+  background-color: #5F2EEA;
+}
+
+@media (max-width: 920px) {
+  .cards-movie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .movies-card {
+  }
+}
