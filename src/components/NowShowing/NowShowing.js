@@ -18,7 +18,7 @@ const NowShowing = () => {
           <Link to="#">Now Showing</Link>
         </p>
         <p>
-          <Link to="#">view all</Link>
+          <Link to="/movies">view all</Link>
         </p>
       </section>
       <div className="card-movie">
@@ -33,7 +33,7 @@ const NowShowing = () => {
                   />
                   <p>{movies.title}</p>
                   <p>{movies.categories}</p>
-                  <button className="rounded-2 button-showing"><Link to="/movie-details">Details</Link></button>
+                  <button className="rounded-2 button-showing"><Link to="/movies/details/">Details</Link></button>
                 </div>
               </li>
             );

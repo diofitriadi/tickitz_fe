@@ -63,7 +63,8 @@
 .card-movie {
   margin-top: .7em;
   padding: 2em;
-  margin-left: -10px
+  margin-left: -10px;
+  width: 100%;
 }
 
 .card-movie ul {
@@ -105,14 +106,23 @@
   color: #A0A3BD;
 }
 
-.card-movie ul li .image-card button {
+.card-movie ul li .image-card .button-showing {
   background-color: white;
   color: #5F2EEA;
   border: 1px solid #5F2EEA;
   margin-top: 1em;
   font-size: .9em;
 }
-.card-movie ul li .image-card button:hover {
+
+.card-movie ul li .image-card .button-showing a {
+  text-decoration: none;
+  color: #fff;
+  padding: .3em .7em;
+  border: 2px solid #fff;
+  border-radius: 4px;
+}
+
+.card-movie ul li .image-card .button-showing:hover {
   background-color: #5F2EEA;
   color: white;
   border: 1px solid white;
@@ -123,7 +133,7 @@
   height: 230px;
 }
 
-.button-showing {
+..button-showing-showing {
   color: #fff !important;
 }
 
@@ -138,8 +148,8 @@
   }  
   .card-movie {
     display: flex;
-    width: 70%;
-    margin: auto;
+    width: 100%;
+    margin-left: 30px;
   }
   .card-movie ul {
       display: flex;
@@ -151,10 +161,12 @@
     width: 200%;
     margin: auto;
     margin-bottom: 50px;
-}
+  }
   .card-movie ul li .image-card img {
   width: 200px;
   height: 42vh;
-}
-
+  }
+.card-movie ul li .image-card p {
+  width: 120px;
+  }
 }

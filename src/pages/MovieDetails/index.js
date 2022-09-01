@@ -1,18 +1,19 @@
 import React from 'react'
-import NavUser from '../../components/NavUser/NavUser'
-import Footer from '../../components/Footer/Footer'
+import NavUser from "../../components/NavUser/NavUser"
+import MovieDetails from "../../components/MovieDetails"
+import Footer from "../../components/Footer/Footer"
 
 
 
-const MovieDetails = () => {
-  return(
+
+const ViewMovieDetails = () => {
+  return (
     <>
-      <NavUser/>
-      <div>Ini Movie Details ke </div>
-      <Footer/>    
+    <NavUser/>
+    <MovieDetails/>
+    <Footer/>
     </>
-
   )
 }
 
-export default MovieDetails
+export default ViewMovieDetails

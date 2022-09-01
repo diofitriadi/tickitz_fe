@@ -1,7 +1,9 @@
 import Home from './Home'
 import Registration from './Registration'
 import Login from './Login'
-import Dashboard from './Dashboard'
+import AdminDashboard from './Dashboard'
+import ViewAllMovies from './ViewAllMovies'
+import ViewMovieDetails from './MovieDetails'
 
 
 
@@ -9,5 +11,7 @@ export {
     Home,
     Registration,
     Login,
-    Dashboard
+    AdminDashboard,
+    ViewAllMovies,
+    ViewMovieDetails
 }

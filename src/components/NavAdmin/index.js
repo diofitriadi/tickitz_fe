@@ -21,7 +21,7 @@ const NavAdmin = ()=> {
             <Link to="/movies"><div className='nav-links'>Manage Movies</div></Link>
             <Link to="/"><div className='nav-links'>Manage Schedule</div></Link>
             </div>
-            <div className='nav-button' >
+            <div className='nav-button'>
                 <Link to={'/'}>
                     {isLogin ? (
                         <button className='button-navigation' onClick={()=> {
