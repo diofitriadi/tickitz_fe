@@ -1,4 +1,3 @@
-
 .container-login {
     display: flex;
     flex-direction: row;
@@ -82,10 +81,10 @@ input:hover {
     outline: none;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="number"],
-input[type="password"] {
+.input-style[type="text"],
+.input-style[type="email"],
+.input-style[type="number"],
+.input-style[type="password"] {
     display: block;
     width: 100%;
     padding: 1rem 1.6rem;
@@ -132,23 +131,14 @@ input[type="submit"]:hover {
 
 button,input[type="submit"] {
     cursor: pointer;
+} 
+.right-login .sign-in form .login-paragraph {
+    margin-left: 45px;
 }
-/* Media Query */
+//Media Query
 @media (max-width: 1200px) {
-    .container-login .left-login .brand-logo span{
-        width: 20vw;
-        height: 15vh;
-        font-size: 1.5em;
-    }
-    .container-login .right-login {
-        text-align: center;
-        width: 100vw;
-        
-    }
-    .container-login .right-login form {
-        display: flex;
-        flex-direction: column;
-    }
+
+
     .container-login .right-login p:last-child {
         margin-left: 1em;
     }
@@ -157,14 +147,18 @@ button,input[type="submit"] {
         text-align: left;
         margin-left: 3em;
     }
-    
+}
+
 @media (max-width: 920px) {
     .container-login .left-login {
         display: none;
     }
-    input[type="submit"] {
-        margin-left: 4.5em;
-        width: 85%;
+    .container-login .right-login {
+        text-align: center;
+        width: 100vw;   
     }
-}
-}
+    .container-login .right-login form {
+        display: flex;
+        flex-direction: column;
+    }
+} 

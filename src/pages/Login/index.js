@@ -56,7 +56,7 @@ const Login = () => {
           <div className="sign-in">
             <form onSubmit={(e) => handleLogin(e)}>
               <h3>Sign In</h3>
-              <p>
+              <p className="login-paragraph">
                 Sign in with your data that you entered <br/>during your registration
               </p>
               <div className="input-container">
@@ -66,6 +66,7 @@ const Login = () => {
                   name="email"
                   id="email"
                   placeholder="Write your email"
+                  className="input-style"
                   required
                   onChange={(e) => {
                     setFormAddData((prevData) => ({
@@ -82,6 +83,7 @@ const Login = () => {
                   name="password"
                   id="password"
                   placeholder="Write your password"
+                  className="input-style"
                   required
                   onChange={(e) => {
                     setFormAddData((prevData) => ({
