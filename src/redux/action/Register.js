@@ -20,24 +20,18 @@ const RegisterError = (error) => {
     };
 };
 
-export const AuthRegister = (registerData) => {
+export const AuthRegister = (formData) => {
     return (dispatch) => {
         dispatch(RegisterRequest())
         axios({
             method: "POST",
             url: `${process.env.REACT_APP_URL_BE}/api/v1/auth/register`,
-            data: {
-                name : registerData.name , 
-                email: registerData.email, 
-                password: registerData.password, 
-                image: registerData.image, 
-                phone_number: registerData.phone_number
-            }
+            data: formData
         }).then((res)=> { //ketika sukses, dispatch success
             dispatch(RegisterSuccess(res.data)) //trigger / dispatch
         }).catch((err)=> {
-            console.log(err.response, "tes error")
-            dispatch(RegisterError(err))
+            console.log(err.response.data, "tes error")
+            dispatch(RegisterError(err.response.data))
         })
     }
 };

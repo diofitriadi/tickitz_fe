@@ -8,6 +8,8 @@ import logoTickitz from "./img/brandlogowhite.png";
 
 const Register = () => {
   const { loading, data, error, isRegister } = useSelector((state) => state.register);
+
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [formAddRegister, setFormAddRegister] = useState({
@@ -17,10 +19,20 @@ const Register = () => {
     image: "",
     phone_number: "",
   });
+
+    //upload image perlu append
+  const formData = new FormData()
+  formData.append("name", formAddRegister.name)
+  formData.append("email", formAddRegister.email)
+  formData.append("password", formAddRegister.password)
+  formData.append("image", formAddRegister.image)
+  formData.append("phone_number", formAddRegister.phone_number)
+
   const handleRegister = (e) => {
     e.preventDefault();
-    dispatch(AuthRegister(formAddRegister));
+    dispatch(AuthRegister(formData));
   };
+
   const [disable, setDisable] = useState(false);
   useEffect(() => {
     if (loading === true) {
