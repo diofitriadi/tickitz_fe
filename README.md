@@ -1,70 +1,112 @@
-# Getting Started with Create React App
+# Tickitz App
+<!-- NAVIGATION -->
+<ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#feature">Feature</a></li>
+        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#related">Related</a></li>
+      </ul>
+    </li>
+    <li><a href="#demo">Demo</a>
+          <ul>
+        <li><a href="#screenshot">Screenshot</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#contributors">Contributors</a></li>
+</ol>
+<!-- ABOUT THE PROJECT -->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About The Project
 
-## Available Scripts
+Tickitz is a website to view a list of the latest and currently airing movies
 
-In the project directory, you can run:
+### Feature
 
-### `npm start`
+- Registration
+- Login as User or Admin
+- List Movies Search and Sort by title, genre, and release date ASC or DESC
+- Pagination 
+- CRUD features if logged in as admin
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Built With
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+some technology used in this project.
+- [Axios](https://www.npmjs.com/package/axios)
+- [Redux](https://redux.js.org/)
+- [React](https://reactjs.org/)
+- [Bootstrap](https://getbootstrap.com/)
+- [momentjs](https://momentjs.com/)
+- [dotenv](https://www.npmjs.com/package/dotenv/)
 
-### `npm test`
+### Related
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Tickitz_be (API)](https://github.com/diofitriadi/tickitz_be)
 
-### `npm run build`
+## Demo
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[Demo web app](https://tickitz-fe-dio.netlify.app/)
+### Screenshot
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+|name  | web   | mobile |
+| ------------- | ------------- | -------------|
+| Landing page       | ![landing](https://i.ibb.co/g9Skgd8/Tickitz-homepage.png)| ![landing](https://i.ibb.co/DLRQ4PR/Tickitz-Responsive.png)
+| Login        | ![login](https://i.ibb.co/QHs7StG/Tickitz-Sign-In.png)| ![res-login](https://i.ibb.co/gVdRQGn/Tickitz-Sign-In-Responsive.png) |
+| Register        | ![register](https://i.ibb.co/nQSChxy/Sign-Up.png)| ![res-register](https://i.ibb.co/pK59V6B/Sign-Up-Responsive.png) |
+| Detail movies | ![detail-movies](https://i.ibb.co/K7rD5kn/Tickitz-list-movies.png)|![res-detail-movies](https://i.ibb.co/Ss4vPKv/Tickitz-list-movies-responsive.png) |
+| Crud |![post-crud](https://i.ibb.co/qFDPGTR/Tickitz-Admin-CRUD.png)||
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<!-- GETTING STARTED -->
+## Getting Started
 
-### `npm run eject`
+Get started with this project, intructions on setting up your project locally.<br />
+To get a local copy up and running follow these simple steps.
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Before installing, you must be install [nodejs.](https://nodejs.org) [yarn](https://yarnpkg.com/getting-started/install)
+### Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone this repo
+ 
+```sh
+git clone https://github.com/diofitriadi/tickitz_fe.git
+```
+2. Install npm package
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```sh
+cd tickitz_fe
+npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Setting `.env`
 
-## Learn More
+- create `.env` file
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```sh
+touch .env
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Add configuration in `.env` file
 
-### Code Splitting
+```sh
+configuration .env 
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. Start the project
 
-### Analyzing the Bundle Size
+```sh
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<!-- Contributors -->
+## Contributors
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- CREATED & UPDATED BY [Dio Fitriadi](https://github.com/diofitriadi)
