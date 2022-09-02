@@ -131,7 +131,7 @@ const Register = () => {
                   }));
                 }}
               />
-            </div>
+            
             {disable ? (
               <input
                 type="submit"
@@ -148,9 +148,10 @@ const Register = () => {
                 onSubmit={(e) => handleRegister(e)}
               />
             )}
-            <p className="text-center">
+            <p className="mx-auto">
               Already have account ? <Link to="/login">Sign In</Link>
             </p>
+            </div>
           </form>
         </div>
       </div>
