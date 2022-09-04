@@ -27,7 +27,7 @@ const NowShowing = () => {
               <img src={`${process.env.REACT_APP_URL_BE}/uploads/${movies.cover}`} alt={movies.title}/>
               <h3>{movies.title}</h3>
               <h4 style={{textAlign: 'center'}}>{movies.categories}</h4>
-              <button className="showing-button"><Link to="/movies/details/">Details</Link></button>
+              <button className="showing-button"><Link to={`/details/${movies.id_movies}`}>Details</Link></button>
             </div>
           );
         })}

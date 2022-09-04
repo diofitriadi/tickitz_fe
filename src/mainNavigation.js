@@ -10,7 +10,7 @@ const MainNavigation = () => {
     <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/movies/' element={<ViewAllMovies/>}/>
-        <Route path='/movies/details/:id' element={<ViewMovieDetails/>}/>
+        <Route path='/details/:id_movies' element={<ViewMovieDetails/>}/>
           <Route element={<VerifyUser/>}>
             <Route path='Registration' element={<Registration/>}/>
             <Route path='Login' element={<Login/>}/>

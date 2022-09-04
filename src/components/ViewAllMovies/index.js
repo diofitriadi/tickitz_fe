@@ -52,7 +52,7 @@ const ViewMovies = () => {
           <p className="details-title text-center mt-2 mx-2">{movies.title}</p>
           <p className="details-categories text-center mx-1">{movies.categories}</p>
           <p className="details-release text-center">{moment(movies.release_date).format('DD MMMM YYYY')}</p>
-          <button className="rounded-2 button-view-movies"><Link to="/movie-details">Details</Link></button>
+          <button className="rounded-2 button-view-movies"><Link to={`/details/${movies.id_movies}`}>Details</Link></button>
         </div>
       )
     })
