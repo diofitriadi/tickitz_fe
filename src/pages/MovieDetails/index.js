@@ -10,6 +10,8 @@ import './style.css'
 
 
 const ViewMovieDetails = () => {
+
+  // eslint-disable-next-line
   const {id_movies : id_movies} = useParams()
   const [movieDetails, setMovieDetails] = useState([])
 
@@ -26,7 +28,6 @@ const ViewMovieDetails = () => {
   }, [])
 
 
-  console.log(movieDetails)
   return (
     <>
     <NavUser/>
@@ -74,13 +75,6 @@ const ViewMovieDetails = () => {
           </div>
          </div>
         </>
-        
-        // <div className="card-info" key={index}>
-        //   <img src={`${process.env.REACT_APP_URL_BE}/uploads/${movies.cover}`} alt={movies.title}/>
-        //   <h3>{movies.title}</h3>
-        //   <h4 style={{textAlign: 'center'}}>{movies.categories}</h4>
-        //   <button className="showing-button"><Link to={`/details/${movies.id_movies}`}>Details</Link></button>
-        //   </div>
       );
     })}
     <Footer/>
